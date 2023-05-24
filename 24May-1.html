@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <script>
+    function sayHello(message) { //js has two scopes: file and function
+      //alert('hello');
+      alert(message);
+    }
+    function sayHelloWithInputBox() {
+      const messageBox = document.getElementById('inbox'); //this is the box
+      const message = messageBox.value; //the text in the box
+      if (message === "red") {
+        messageBox.style.color = "red";
+        messageBox.style.fontsize(30);
+      }
+
+      //alert   (message);
+      //a shortcut using global var,
+      //'inbox' is same as document.getElementById('inbox')
+        if (inbox.value === "red") messageBox.style.color = "red";
+    }
+
+  </script>
+
+</head>
+<body>
+<p> Hey now brown cow</p>
+<button onclick="sayHello('loose lucy')">Click Me!</button>
+<input id="inbox"> <!-- JS wll create a global var with the name of the id -->
+<button onclick="sayHelloWithInputBox()">With Box</button>
+</body>
+</html>
