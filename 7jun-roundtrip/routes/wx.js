@@ -15,12 +15,17 @@ router.get('/', async (req, res, next) => {
         if (cachedData) {
             let parsedData = await JSON.parse(cachedData);
             console.log(`Cached: ${parsedData.current.temp}`);
-            res.json(cachedData)
+            parsedData.cached = true;
+            res.json(parsedData)
         }
         let rawWxInfo = await fetch(wxConfig.url + wxConfig.queryString)
         let parsedData = await rawWxInfo.json();
+
+
+
         console.table(`Live temp: ${parsedData.current.temp}`);
-        let response = await redis.set("wxInfo", parsedData, "EX", 5);
+        let response = await redis.set("wxInfo", parsedData, "EX", 15);
+        parsedData.cached = false;
         res.json(parsedData);
     } catch (err) {
         console.log(`Error: ${err}`);
