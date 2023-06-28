@@ -8,7 +8,8 @@
 This is here as something of a placeholder. We're not using a backend here, but if we were
 the submit action on the form would call the back-end route.
 <br/>
-
+<!-- Using a GET here will result result in a query string being sent to the backend-->
+<!--Like: http://localhost:3000/routeHere?city=somethign&units=something - normally use a POST -->
 <form action="http://localhost:3000/routeHere" method="post">
   <label>City </label><input name="city"><br/>  on req.body.city and so on
   <label>Units </label><input name="units"><br/>

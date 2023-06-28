@@ -3,6 +3,7 @@ import {WxServiceService} from "./services/wx.service";
 import {GeocodeService} from "./services/geocode.service";
 import {WeatherResponse} from "./interfaces/Weather";
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-root',

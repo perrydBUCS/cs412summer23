@@ -12,19 +12,16 @@ Note that this also works with FormBuilder service (same syntax in HTML)
 
 <br/>
 <form [formGroup]="weatherFormGroup" (ngSubmit)="getWeatherByCityWay3()">
-  City: <input  formControlName="cityControl3"> : {{city}}<br/>
-  State: <input  formControlName="stateControl3" ><br/>
-  <button mat-fab color="primary" type="submit" >
-    <mat-icon>home</mat-icon>
-
-  </button>
+  <input data-cy="city-input" formControlName="cityControl3">
+  <input data-cy="state-input" formControlName="stateControl3">
+  <button data-cy="submit-button" type="submit">Submit</button>
 </form>
-<br/>
-<br/>
-Current weather: <br/>
-Temp: {{temperature | number:'3.5'}}
-Pressure: {{pressure | currency}}
-Humidity : {{humidity}}
+
+<p data-cy="temperature">Temperature: {{temperature}}</p>
+<p data-cy="humidity">Humidity: {{humidity}}</p>
+<p data-cy="pressure">Pressure: {{pressure}}</p>
+
 <hr/>
 </body>
 </html>
+<!--npx cypress open-->
